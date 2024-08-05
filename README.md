@@ -1,4 +1,3 @@
-
 # Discord Music Bot
 
 This is a Discord music bot that plays music in voice channels. The bot uses YouTube as its source and allows users to queue and play songs upon user request. It also continuously plays music based on user selection.
@@ -44,7 +43,38 @@ To run this bot, you need to have Python and `pip` installed on your system. Add
 
    Replace `your-discord-bot-token` with your actual Discord bot token and `your-voice-channel-id` with the ID of the voice channel where the bot will connect.
 
-5. **Run the Bot**
+5. **Retrieve Your Discord Bot Token**
+
+   1. Go to the [Discord Developer Portal](https://discord.com/developers/applications).
+   2. Click on "New Application".
+   3. Name your application and click "Create".
+   4. Navigate to the "Bot" tab on the left sidebar.
+   5. Click "Add Bot" and confirm.
+   6. Under the "Token" section, click "Copy" to copy your bot token. Paste this token in your `.env` file as `DISCORD_BOT_TOKEN`.
+
+6. **Enable Privileged Gateway Intents**
+
+   Some Gateway Intents require approval if your bot is verified. If your bot is not verified, you can toggle these intents to access them:
+
+   - **Presence Intent**: Required for your bot to receive Presence Update events. Note that once your bot reaches 100 or more servers, this will require verification and approval. Read more [here](https://discord.com/developers/docs/topics/gateway#privileged-intents).
+   - **Server Members Intent**: Required for your bot to receive events listed under GUILD_MEMBERS. Note that once your bot reaches 100 or more servers, this will require verification and approval. Read more [here](https://discord.com/developers/docs/topics/gateway#privileged-intents).
+   - **Message Content Intent**: Required for your bot to receive message content in most messages. Note that once your bot reaches 100 or more servers, this will require verification and approval. Read more [here](https://discord.com/developers/docs/topics/gateway#privileged-intents).
+
+   Enable these intents in the "Privileged Gateway Intents" section on the "Bot" tab.
+
+7. **Generate OAuth2 URL for Your Bot**
+
+   1. Navigate to the "OAuth2" tab on the left sidebar.
+   2. Under the "OAuth2 URL Generator" section, select the following scopes:
+      - `bot`
+      - `applications.commands`
+   3. Under "Bot Permissions", select the permissions your bot needs. For example:
+      - `Send Messages`
+      - `Connect`
+      - `Speak`
+   4. Copy the generated URL and paste it into your browser to add the bot to your server.
+
+8. **Run the Bot**
 
    Run the bot using the following command:
 
@@ -106,4 +136,4 @@ If you want to contribute to this project, please fork the repository and create
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for 
