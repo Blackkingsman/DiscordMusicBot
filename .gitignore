@@ -1,2 +1,4 @@
 .env
 nohup.out
+song_queue.json
+bot.log
